@@ -1,0 +1,81 @@
+<section class="absolute w-[100%] bg-teal-500" style="opacity: 0.5; z-index: 2;">
+  <section class="h-screen  flex justify-center items-center">
+  </section>
+</section>
+
+<section class="relative bg-white " style="z-index: 2;">
+  <div class="flex justify-center">
+    <div class="flex justify-between flex items-center w-[85%] h-[65px] items-center">
+      <div class=" flex items-center">
+        <i><img class="w-[50px] h-[50px]" style="cursor: pointer;" [routerLink]="'/inicio'" src="assets/img/bookzone-icon.png" alt=""></i>
+      </div>
+      <div>
+        <button mat-button [matMenuTriggerFor]="menu"><i><img class="w-[30px] h-[35px]" src="assets/img/menu.png"
+              alt=""></i></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="'/producto'">Producto</button>
+          <button mat-menu-item [routerLink]="'/cliente'">Clientes</button>
+          <button mat-menu-item [routerLink]="'/usuario'">Usuarios</button>
+          <button mat-menu-item [routerLink]="'/venta'">Reporte de ventas</button>
+          <button mat-menu-item [routerLink]="'/pedido'">Generar pedidos</button>
+          <button mat-menu-item [routerLink]="'/index'">Salir</button>
+        </mat-menu>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="flex justify-center mt-4">
+<section class="relative" style="z-index: 2; width: 100%;">
+  <div class="flex justify-center">
+  <div class="demo-button-container flex flex-col space-y-4">
+    <button mat-raised-button (click)="addData()" class="demo-button">
+      Add data
+    </button>
+    <button
+        mat-raised-button
+        [disabled]="!dataSource.length"
+        (click)="removeData()"
+        class="demo-button">
+      Remove data
+    </button>
+  </div>
+  <table mat-table [dataSource]="dataSource" class="ml-4 mat-elevation-z8 demo-table" style="width: 80%;">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      </ng-container>
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="dni">
+      <th mat-header-cell *matHeaderCellDef>DNI</th>
+      <td mat-cell *matCellDef="let element">{{element.dni}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="telefono">
+      <th mat-header-cell *matHeaderCellDef>telefono</th>
+      <td mat-cell *matCellDef="let element">{{element.telefono}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="user">
+      <th mat-header-cell *matHeaderCellDef>Usuario</th>
+      <td mat-cell *matCellDef="let element">{{element.user}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+</section>
+</section>
