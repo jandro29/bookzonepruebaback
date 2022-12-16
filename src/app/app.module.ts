@@ -21,6 +21,10 @@ import { UsuariosComponent } from './views/opciones/usuarios/usuarios.component'
 import { RepotventComponent } from './views/opciones/repotvent/repotvent.component';
 import { GenpedComponent } from './views/opciones/genped/genped.component';
 import {MatTableModule} from '@angular/material/table';
+import { FromClienteComponent } from './views/opciones/clientes/from-cliente.component';
+import { FormsModule } from '@angular/forms'
+
+
 
 
 const routes: Routes = [
@@ -63,6 +67,16 @@ const routes: Routes = [
     component: GenpedComponent,
   },
 
+  //FORMULARIOS
+  {
+    path: 'cliente/form',
+    component: ClientesComponent,
+  },
+  {
+    path: 'cliente/form/:idcli',
+    component: ClientesComponent,
+  },
+
   {
     path: '**',
     component: IndexComponent,
@@ -80,6 +94,8 @@ const routes: Routes = [
     UsuariosComponent,
     RepotventComponent,
     GenpedComponent,
+    FromClienteComponent,
+
 
   ],
   imports: [
@@ -94,7 +110,8 @@ const routes: Routes = [
     HttpClientModule,
     MatIconModule,
     MatMenuModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },

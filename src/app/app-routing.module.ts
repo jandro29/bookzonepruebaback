@@ -7,6 +7,7 @@ import { ClientesComponent } from './views/opciones/clientes/clientes.component'
 import { UsuariosComponent } from './views/opciones/usuarios/usuarios.component';
 import { RepotventComponent } from './views/opciones/repotvent/repotvent.component';
 import { GenpedComponent } from './views/opciones/genped/genped.component';
+import { FromClienteComponent } from './views/opciones/clientes/from-cliente.component';
 
 const routes: Routes = [
 
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'usuario', component: UsuariosComponent},
   { path: 'venta', component: RepotventComponent},
   { path: 'pedido', component: GenpedComponent},
+  { path: 'cliente/form', component: FromClienteComponent},
+  { path: 'cliente/form/:idcli', component: FromClienteComponent},
   { path: '**', component: IndexComponent },
 
 

@@ -8,7 +8,7 @@ import { Cliente } from './cliente';
 })
 export class ClienteService {
 
-  private url:string="/*urldelspring*/";
+  private url:string="http://localhost:9898/api/clientes";
 
   constructor(private http:HttpClient) { }
 
@@ -24,8 +24,8 @@ export class ClienteService {
   }
 
   //obtener un cliente
-  get(id:number):Observable<Cliente[]>{
-    return this.http.get<Cliente[]>(this.url+'/'+id);
+  get(idcli:number):Observable<Cliente[]>{
+    return this.http.get<Cliente[]>(this.url+'/'+idcli);
   }
 
   //actualizar cliente
@@ -36,7 +36,7 @@ export class ClienteService {
 
   //eliminar cliente
 
-  delete(id:number):Observable<Cliente[]>{
-    return this.http.delete<Cliente[]>(this.url+'/'+id);
+  delete(idcli:number):Observable<Cliente[]>{
+    return this.http.delete<Cliente[]>(this.url+'/'+idcli);
   }
 }

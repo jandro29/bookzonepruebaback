@@ -1,7 +1,6 @@
 export class Cliente {
-  id!: number;
+  idcli!: number;
   dni!: number;
   nombre!: string;
   direccion!: string;
-  estado!: string;
 }
