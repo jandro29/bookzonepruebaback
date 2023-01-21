@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Genped } from './genped';
+import { GenpedService } from './genped.service';
 
 @Component({
   selector: 'app-genped',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GenpedComponent implements OnInit {
 
-  constructor() { }
+
+  genped!:Genped[];
+
+
+  constructor(private gendpedService:GenpedService) { }
 
   ngOnInit(): void {
+    this.gendpedService.getAll().subscribe(
+      e=>this.genped=e
+    );
   }
 
 }

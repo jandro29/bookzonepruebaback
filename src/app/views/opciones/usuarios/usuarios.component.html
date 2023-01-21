@@ -26,56 +26,52 @@
 </section>
 
 
+<p class="mt-6 flex justify-center text-[30px]" style="color: black;"> <b>Usuarios de Bookzone</b></p>
 <section class="flex justify-center mt-4">
-<section class="relative" style="z-index: 2; width: 100%;">
-  <div class="flex justify-center">
-  <div class="demo-button-container flex flex-col space-y-4">
-    <button mat-raised-button (click)="addData()" class="demo-button">
-      Add data
-    </button>
-    <button
-        mat-raised-button
-        [disabled]="!dataSource.length"
-        (click)="removeData()"
-        class="demo-button">
-      Remove data
-    </button>
-  </div>
-  <table mat-table [dataSource]="dataSource" class="ml-4 mat-elevation-z8 demo-table" style="width: 80%;">
 
-      <!-- Position Column -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef>Id</th>
-        <td mat-cell *matCellDef="let element">{{element.id}}</td>
-      </ng-container>
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="dni">
-      <th mat-header-cell *matHeaderCellDef>DNI</th>
-      <td mat-cell *matCellDef="let element">{{element.dni}}</td>
-    </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef>Name</th>
-      <td mat-cell *matCellDef="let element">{{element.name}}</td>
-    </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="telefono">
-      <th mat-header-cell *matHeaderCellDef>telefono</th>
-      <td mat-cell *matCellDef="let element">{{element.telefono}}</td>
-    </ng-container>
+  <section class="relative" style="z-index: 2; width: 100%;">
+    <div class="flex justify-center">
+      <div class="demo-button-container flex flex-col space-y-4">
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="user">
-      <th mat-header-cell *matHeaderCellDef>Usuario</th>
-      <td mat-cell *matCellDef="let element">{{element.user}}</td>
-    </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>
-</section>
+      </div>
+      <div class="container">
+      <table class="data w-[85%] table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID Proveedor</th>
+            <th scope="col">Nombre Proveedor</th>
+            <th scope="col">Nombre Empresa</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Correo</th>
+            <th scope="col">Telefono</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuarios of usuarios">
+            <th scope="row">{{usuarios.idpro}}</th>
+            <td>{{usuarios.nomprove}}</td>
+            <td>{{usuarios.nomempresa}}</td>
+            <td>{{usuarios.direccion}}</td>
+            <td>{{usuarios.correo}}</td>
+            <td>{{usuarios.telf}}</td>
+            <td> <button type="button" name="button" class="btn btn-primary" [routerLink]="['/usuarios/form', usuarios.idpro]">Editar</button></td>
+
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    </div>
+    <div class="mt-3 w-[50px] ml-12">
+      <a [routerLink]="['/usuarios/form']"><img src="assets/img/agregar-libro.png" alt=""></a>
+    </div>
+
+  </section>
 </section>

@@ -22,7 +22,12 @@ import { RepotventComponent } from './views/opciones/repotvent/repotvent.compone
 import { GenpedComponent } from './views/opciones/genped/genped.component';
 import {MatTableModule} from '@angular/material/table';
 import { FromClienteComponent } from './views/opciones/clientes/from-cliente.component';
-import { FormsModule } from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { FormgenpedComponent } from './views/opciones/genped/formgenped.component';
+import { FormProductoComponent } from './views/opciones/producto/form-producto.component';
+import { FormReportventaComponent } from './views/opciones/repotvent/form-reportventa.component';
+import { FormUsuariosComponent } from './views/opciones/usuarios/form-usuarios.component';
+
 
 
 
@@ -95,6 +100,11 @@ const routes: Routes = [
     RepotventComponent,
     GenpedComponent,
     FromClienteComponent,
+    FormgenpedComponent,
+    FormProductoComponent,
+    FormReportventaComponent,
+    FormUsuariosComponent,
+
 
 
   ],

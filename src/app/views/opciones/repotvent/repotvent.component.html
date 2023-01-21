@@ -25,3 +25,54 @@
   </div>
 
 </section>
+<p class="mt-6 flex justify-center text-[30px]" style="color: black;"> <b>Reporte de Ventas</b></p>
+<section class="flex justify-center mt-4">
+
+
+
+
+  <section class="relative" style="z-index: 2; width: 100%;">
+    <div class="flex justify-center">
+      <div class="demo-button-container flex flex-col space-y-4">
+
+
+      </div>
+      <div class="container">
+      <table class="data w-[85%] table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID ventas</th>
+            <th scope="col">ID cliente</th>
+            <th scope="col">ID vendedor</th>
+            <th scope="col">numser</th>
+            <th scope="col">fechvent</th>
+            <th scope="col">monto</th>
+            <th scope="col">estado</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reportvent of reportvent">
+            <th scope="row">{{reportvent.idvent}}</th>
+            <td>{{reportvent.idcli}}</td>
+            <td>{{reportvent.idvendedor}}</td>
+            <td>{{reportvent.numser}}</td>
+            <td>{{reportvent.fechvent}}</td>
+            <td>{{reportvent.monto}}</td>
+            <td>{{reportvent.estado}}</td>
+            <td> <button type="button" name="button" class="btn btn-primary" [routerLink]="['/reportvent/form', reportvent.idvent]">Editar</button></td>
+
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+  </div>
+  <div class="mt-3 w-[50px] ml-12">
+    <a [routerLink]="['/reportvent/form']"><img src="assets/img/agregar-libro.png" alt=""></a>
+  </div>
+
+  </section>
+</section>

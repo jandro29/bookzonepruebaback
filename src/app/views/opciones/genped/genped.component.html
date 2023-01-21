@@ -25,3 +25,52 @@
   </div>
 
 </section>
+<p class="mt-6 flex justify-center text-[30px]" style="color: black;"> <b>Generar Pedidos</b></p>
+<section class="flex justify-center mt-4">
+
+
+
+
+  <section class="relative" style="z-index: 2; width: 100%;">
+    <div class="flex justify-center">
+      <div class="demo-button-container flex flex-col space-y-4">
+
+
+      </div>
+      <div class="container">
+      <table class="data w-[85%] table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID ventas</th>
+            <th scope="col">ID vent</th>
+            <th scope="col">ID producto</th>
+            <th scope="col">cantidad</th>
+            <th scope="col">precioventa</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let genped of genped">
+            <th scope="row">{{genped.idventas}}</th>
+            <td>{{genped.idvent}}</td>
+            <td>{{genped.idprod}}</td>
+            <td>{{genped.cantidad}}</td>
+            <td>{{genped.precioventa}}</td>
+            <td> <button type="button" name="button" class="btn btn-primary" [routerLink]="['/generarpedido/form', genped.idventas]">Editar</button></td>
+
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+
+    </div>
+    <div class="mt-3 w-[50px] ml-12">
+      <a [routerLink]="['/generarpedido/form']"><img src="assets/img/agregar-libro.png" alt=""></a>
+    </div>
+
+  </section>
+</section>
+
+

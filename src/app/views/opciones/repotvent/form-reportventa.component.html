@@ -30,20 +30,12 @@
   <div class="card-body">
     <p class="flex justify-center mt-4 text-[30px]">{{titulo}}</p>
 
-    <form class="space-y-8  flex justify-center">
+    <form class="space-y-8  flex justify-center contenedor">
       <div class="flex flex-col  w-[100%] mt-10">
         <div class="flex justify-center">
           <div class="col-sm-6">
             <mat-form-field class="w-100">
-            <input matInput type="number" placeholder="DNI" [disabled]="true" name="dni" [(ngModel)]="cliente.dni">
-         </mat-form-field>
-          </div>
-        </div>
-
-        <div class="flex justify-center mt-10">
-          <div class="col-sm-6">
-            <mat-form-field class="w-100">
-            <input matInput type="text" placeholder="Nombre" name="nombre" [(ngModel)]="cliente.nombre">
+            <input matInput type="tel" placeholder="ID Cliente" [disabled]="true" name="ventas" [(ngModel)]="reportventa.idcli">
           </mat-form-field>
           </div>
         </div>
@@ -51,22 +43,47 @@
         <div class="flex justify-center mt-10">
           <div class="col-sm-6">
             <mat-form-field class="w-100">
-            <input matInput type="text" placeholder="Direccion" [disabled]="true" name="direccion"
-              [(ngModel)]="cliente.direccion">
-              </mat-form-field>
+            <input matInput type="tel" placeholder="ID Vendedor" [disabled]="true" name="producto" [(ngModel)]="reportventa.idvendedor">
+          </mat-form-field>
           </div>
+        </div>
 
+        <div class="flex justify-center mt-10">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+            <input matInput type="tel" placeholder="Numero de serie" [disabled]="true" name="cantidad"
+              [(ngModel)]="reportventa.numser">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="flex justify-center mt-10">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+            <input matInput type="date" placeholder="Fecha de venta" [disabled]="true"  name="preciovent"
+              [(ngModel)]="reportventa.fechvent">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="flex justify-center mt-10">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+            <input matInput type="tel" [disabled]="true" placeholder="Monto" name="preciovent"
+              [(ngModel)]="reportventa.monto">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="flex justify-center mt-10">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+            <input matInput type="text" placeholder="Estado" [disabled]="true" name="preciovent"
+              [(ngModel)]="reportventa.estado">
+            </mat-form-field>
+          </div>
         </div>
         <div class="flex justify-center mt-6">
-          <button class="btn " style="background: cyan;" role="button" (click)='create()' *ngIf="!cliente.idcli;else elseBlock">Registras</button>
-
-          <ng-template #elseBlock>
-          <button #elseBlock class="btn " style="background: cyan;" role="button" (click)='update()'>Actualizar</button>
-        </ng-template>
+          <button class="btn " style="background: cyan;" role="button" (click)='create()'>Registras</button>
         </div>
       </div>
     </form>
-
   </div>
-
 </div>

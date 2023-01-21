@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Reportventa } from './reportventa';
+import { ReportventaService } from './reportventa.service';
 
 @Component({
   selector: 'app-repotvent',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RepotventComponent implements OnInit {
 
-  constructor() { }
+  reportvent!:Reportventa[];
+
+  constructor(private reportventService:ReportventaService) { }
 
   ngOnInit(): void {
+    this.reportventService.getAll().subscribe(
+      e=>this.reportvent=e
+    );
   }
 
 }

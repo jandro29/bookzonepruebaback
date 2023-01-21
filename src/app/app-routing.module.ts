@@ -8,6 +8,10 @@ import { UsuariosComponent } from './views/opciones/usuarios/usuarios.component'
 import { RepotventComponent } from './views/opciones/repotvent/repotvent.component';
 import { GenpedComponent } from './views/opciones/genped/genped.component';
 import { FromClienteComponent } from './views/opciones/clientes/from-cliente.component';
+import { FormgenpedComponent } from './views/opciones/genped/formgenped.component';
+import { FormProductoComponent } from './views/opciones/producto/form-producto.component';
+import { FormReportventaComponent } from './views/opciones/repotvent/form-reportventa.component';
+import { FormUsuariosComponent } from './views/opciones/usuarios/form-usuarios.component';
 
 const routes: Routes = [
 
@@ -19,11 +23,29 @@ const routes: Routes = [
   { path: 'usuario', component: UsuariosComponent},
   { path: 'venta', component: RepotventComponent},
   { path: 'pedido', component: GenpedComponent},
+
+  //formulario cliente
   { path: 'cliente/form', component: FromClienteComponent},
   { path: 'cliente/form/:idcli', component: FromClienteComponent},
+
+  //formulario generar pedido
+  { path: 'generarpedido/form', component: FormgenpedComponent},
+  { path: 'generarpedido/form/:idventas', component: FormgenpedComponent},
+
+  //formulario producto
+  { path: 'producto/form', component: FormProductoComponent},
+  { path: 'producto/form/:idprod', component: FormProductoComponent},
+
+ //formulario report ventas
+ { path: 'reportvent/form', component: FormReportventaComponent},
+ { path: 'reportvent/form/:idvent', component: FormReportventaComponent},
+
+ //formulario usuarios
+ { path: 'usuarios/form', component: FormUsuariosComponent},
+ { path: 'usuarios/form/:idpro', component: FormUsuariosComponent},
+
+
   { path: '**', component: IndexComponent },
-
-
 
 ];
 

@@ -35,15 +35,7 @@
         <div class="flex justify-center">
           <div class="col-sm-6">
             <mat-form-field class="w-100">
-            <input matInput type="number" placeholder="DNI" [disabled]="true" name="dni" [(ngModel)]="cliente.dni">
-         </mat-form-field>
-          </div>
-        </div>
-
-        <div class="flex justify-center mt-10">
-          <div class="col-sm-6">
-            <mat-form-field class="w-100">
-            <input matInput type="text" placeholder="Nombre" name="nombre" [(ngModel)]="cliente.nombre">
+            <input matInput type="number" [disabled]="true"  placeholder="ID VENTAS" name="ventas" [(ngModel)]="genped.idvent">
           </mat-form-field>
           </div>
         </div>
@@ -51,18 +43,31 @@
         <div class="flex justify-center mt-10">
           <div class="col-sm-6">
             <mat-form-field class="w-100">
-            <input matInput type="text" placeholder="Direccion" [disabled]="true" name="direccion"
-              [(ngModel)]="cliente.direccion">
-              </mat-form-field>
+            <input matInput type="number" [disabled]="true"  placeholder="ID Producto" name="producto" [(ngModel)]="genped.idprod">
+          </mat-form-field>
           </div>
+        </div>
 
+        <div class="flex justify-center mt-10">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+            <input matInput type="number" placeholder="Cantidad" [disabled]="true" name="cantidad"
+              [(ngModel)]="genped.cantidad">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="flex justify-center mt-10">
+          <div class="col-sm-6">
+            <mat-form-field class="w-100">
+            <input matInput type="tel" placeholder="Precio venta" [disabled]="true" name="preciovent"
+              [(ngModel)]="genped.precioventa">
+            </mat-form-field>
+          </div>
         </div>
         <div class="flex justify-center mt-6">
-          <button class="btn " style="background: cyan;" role="button" (click)='create()' *ngIf="!cliente.idcli;else elseBlock">Registras</button>
+          <button class="btn " style="background: cyan;" role="button" (click)='create()'>Registras</button>
 
-          <ng-template #elseBlock>
-          <button #elseBlock class="btn " style="background: cyan;" role="button" (click)='update()'>Actualizar</button>
-        </ng-template>
+
         </div>
       </div>
     </form>

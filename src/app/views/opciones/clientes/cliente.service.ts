@@ -8,7 +8,7 @@ import { Cliente } from './cliente';
 })
 export class ClienteService {
 
-  private url:string="http://localhost:9898/api/clientes";
+  private url:string="http://localhost:8080/api/clientes";
 
   constructor(private http:HttpClient) { }
 
@@ -24,8 +24,8 @@ export class ClienteService {
   }
 
   //obtener un cliente
-  get(idcli:number):Observable<Cliente[]>{
-    return this.http.get<Cliente[]>(this.url+'/'+idcli);
+  get(idcli:number):Observable<Cliente>{
+    return this.http.get<Cliente>(this.url+'/'+idcli);
   }
 
   //actualizar cliente

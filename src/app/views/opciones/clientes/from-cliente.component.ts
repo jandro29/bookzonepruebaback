@@ -18,32 +18,34 @@ export class FromClienteComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.cargar()
 
-
-    //this.cargar()
-
-  }/*
-  cargar():void{
-
-
+  }
+ cargar():void{
     this.actiatedRoute.params.subscribe(
       e=>{
-        let idcli=e['idcli'];
-        if(idcli){
-          this.clienteService.get(idcli).subscribe(
-            es=>this.cliente =es
-          );
-        }
+       let idcli=e['idcli'];
+       if(idcli){
+        this.clienteService.get(idcli).subscribe(
+          es=>this.cliente=es
+        )
+       }
       }
     );
-  }
-*/
+ }
+
   create():void{
     console.log(this.cliente);
     this.clienteService.create(this.cliente).subscribe(
       res=>this.router.navigate(['/cliente'])
 
     );
+  }
+
+  update():void{
+    this.clienteService.update(this.cliente).subscribe(
+      res=>this.router.navigate(['/cliente'])
+    )
   }
 
 }
